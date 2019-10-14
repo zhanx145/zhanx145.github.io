@@ -1,0 +1,13 @@
+name: "Xueting Zhang"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<shelleyzhang11@gmail.com>
+    - icon: fa-github fa-lg
+      href: http://github.com/zhanx145/
+output:
+  html_document
