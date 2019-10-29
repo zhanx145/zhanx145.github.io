@@ -3,11 +3,19 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About"
-      href: about.html
+    - icon: fa-github fa-lg
+      href: https://github.com/zhanx145
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/mariazxt11
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/xueting-zhang-3a015614b/
     - icon: fa-envelope fa-lg
       href: mailto:<shelleyzhang11@gmail.com>
-    - icon: fa-github fa-lg
-      href: http://github.com/zhanx145/
+
+  left:
+    - text: "About R"
+      href: about.html
+
+  
 output:
   html_document

@@ -1,9 +1,30 @@
 ---
-title: "About"
+title: "About R"
 ---
 
-### About this site
+R dplyr Package
 
-Sometimes you need to say a bit about the site -- how it was made, where it's hosted, where the source code can be found. 
+There are 5 main verbs:
 
-If this is for a project or analysis, I recommend giving some details about the R package versions that you used to create the content.
+1. select(): takes a subset of the coulmns
+
+2. filter(): takes a subset of the rows
+
+3. mutate(): add or modify existing columns
+
+4. arrange(): sort the rows
+
+5. summarise(): aggregate the data across the rows
+
+
+Combine multiple tables:
+
+inner_join():return all rows from x where there are matching values in y, and all columns from x and y.
+
+left_join(): return all rows from x, and all columns from x and y.
+
+right_join():return all rows from y , and all columns from x and y. 
+
+full_join(): return all rows and all columns from both x and y. 
+
+<img src="Image/dplyr-joins.png" style="width:50%; border:1px solid; margin-right: 20px" align="right">

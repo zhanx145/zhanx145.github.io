@@ -12,7 +12,7 @@
 
 
 
-<title>About</title>
+<title>About R</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -273,21 +273,32 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        
+        <li>
+  <a href="about.html">About R</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="about.html">About</a>
-</li>
-<li>
-  <a href="mailto:&lt;shelleyzhang11@gmail.com&gt;">
-    <span class="fa fa-envelope fa-lg"></span>
+  <a href="https://github.com/zhanx145">
+    <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="http://github.com/zhanx145/">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://twitter.com/mariazxt11">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/xueting-zhang-3a015614b/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="mailto:&lt;shelleyzhang11@gmail.com&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
      
   </a>
 </li>
@@ -300,16 +311,26 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About</h1>
+<h1 class="title toc-ignore">About R</h1>
 
 </div>
 
 
-<div id="about-this-site" class="section level3">
-<h3>About this site</h3>
-<p>Sometimes you need to say a bit about the site – how it was made, where it’s hosted, where the source code can be found.</p>
-<p>If this is for a project or analysis, I recommend giving some details about the R package versions that you used to create the content.</p>
-</div>
+<p>R dplyr Package</p>
+<p>There are 5 main verbs:</p>
+<ol style="list-style-type: decimal">
+<li><p>select(): takes a subset of the coulmns</p></li>
+<li><p>filter(): takes a subset of the rows</p></li>
+<li><p>mutate(): add or modify existing columns</p></li>
+<li><p>arrange(): sort the rows</p></li>
+<li><p>summarise(): aggregate the data across the rows</p></li>
+</ol>
+<p>Combine multiple tables:</p>
+<p>inner_join():return all rows from x where there are matching values in y, and all columns from x and y.</p>
+<p>left_join(): return all rows from x, and all columns from x and y.</p>
+<p>right_join():return all rows from y , and all columns from x and y.</p>
+<p>full_join(): return all rows and all columns from both x and y.</p>
+<p><img src="Image/dplyr-joins.png" style="width:50%; border:1px solid; margin-right: 20px" align="right"></p>
 
 
 

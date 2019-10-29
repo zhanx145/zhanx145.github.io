@@ -1,7 +1,10 @@
 ---
-title: "Holy cow!"
+title: "Personal Website"
 ---
 
-### I have a webpage!
+### 
 
-And I can put all kinds of stuff on it!
+<img src="Image/cat.jpg" style="width:50%; border:1px solid; margin-right: 20px" align="left">
+Hi, I'm Xueting Zhang, currently a Health Informatics graduate student at Cornell University. I received my Bachelor degree in Biology at UC San Diego.
+
+My resume is available [here](Files/Resume-Xueting.pdf).
