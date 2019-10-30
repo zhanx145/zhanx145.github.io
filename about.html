@@ -12,7 +12,7 @@
 
 
 
-<title>About R</title>
+<title>About R dplyr Package</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -311,25 +311,99 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About R</h1>
+<h1 class="title toc-ignore">About R dplyr Package</h1>
 
 </div>
 
 
-<p>R dplyr Package</p>
-<p>There are 5 main verbs:</p>
+<h1>
+There are 5 main verbs:
+</h1>
+<h1>
 <ol style="list-style-type: decimal">
-<li><p>select(): takes a subset of the coulmns</p></li>
-<li><p>filter(): takes a subset of the rows</p></li>
-<li><p>mutate(): add or modify existing columns</p></li>
-<li><p>arrange(): sort the rows</p></li>
-<li><p>summarise(): aggregate the data across the rows</p></li>
+<li>select(): takes a subset of the coulmns
+</h1></li>
 </ol>
-<p>Combine multiple tables:</p>
-<p>inner_join():return all rows from x where there are matching values in y, and all columns from x and y.</p>
-<p>left_join(): return all rows from x, and all columns from x and y.</p>
-<p>right_join():return all rows from y , and all columns from x and y.</p>
-<p>full_join(): return all rows and all columns from both x and y.</p>
+<pre class="r"><code>library(&quot;dplyr&quot;)
+data(&quot;iris&quot;)
+iris%&gt;%
+  select(Species,Sepal.Length)%&gt;%
+  head()</code></pre>
+<pre><code>##   Species Sepal.Length
+## 1  setosa          5.1
+## 2  setosa          4.9
+## 3  setosa          4.7
+## 4  setosa          4.6
+## 5  setosa          5.0
+## 6  setosa          5.4</code></pre>
+<h1>
+<ol start="2" style="list-style-type: decimal">
+<li>filter(): takes a subset of the rows
+</h1></li>
+</ol>
+<pre class="r"><code>iris%&gt;%
+  filter(Species==&#39;setosa&#39;)%&gt;%
+  head()</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<h1>
+<ol start="3" style="list-style-type: decimal">
+<li>mutate(): add or modify existing columns
+</h1></li>
+</ol>
+<pre class="r"><code>iris%&gt;%
+  mutate(Petal.Ratio=Petal.Length/Petal.Width)%&gt;%
+  head()</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species Petal.Ratio
+## 1          5.1         3.5          1.4         0.2  setosa        7.00
+## 2          4.9         3.0          1.4         0.2  setosa        7.00
+## 3          4.7         3.2          1.3         0.2  setosa        6.50
+## 4          4.6         3.1          1.5         0.2  setosa        7.50
+## 5          5.0         3.6          1.4         0.2  setosa        7.00
+## 6          5.4         3.9          1.7         0.4  setosa        4.25</code></pre>
+<h1>
+<ol start="4" style="list-style-type: decimal">
+<li>arrange(): sort the rows
+</h1></li>
+</ol>
+<pre class="r"><code>iris%&gt;%
+  arrange(desc(Sepal.Length))%&gt;%
+  head()</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 1          7.9         3.8          6.4         2.0 virginica
+## 2          7.7         3.8          6.7         2.2 virginica
+## 3          7.7         2.6          6.9         2.3 virginica
+## 4          7.7         2.8          6.7         2.0 virginica
+## 5          7.7         3.0          6.1         2.3 virginica
+## 6          7.6         3.0          6.6         2.1 virginica</code></pre>
+<h1>
+<ol start="5" style="list-style-type: decimal">
+<li>summarise(): aggregate the data across the rows
+</h1></li>
+</ol>
+<pre class="r"><code>iris%&gt;%summarise(mean.length = mean(Petal.Length, na.rm = TRUE))</code></pre>
+<pre><code>##   mean.length
+## 1       3.758</code></pre>
+<h1>
+Below are ways to combine multiple tables:
+</h1>
+<p>
+1.inner_join():return all rows from x where there are matching values in y, and all columns from x and y.
+</p>
+<p>
+2.left_join(): return all rows from x, and all columns from x and y.
+</p>
+<p>
+3.right_join():return all rows from y , and all columns from x and y.
+</p>
+<p>
+4.full_join(): return all rows and all columns from both x and y.
+</p>
 <p><img src="Image/dplyr-joins.png" style="width:50%; border:1px solid; margin-right: 20px" align="right"></p>
 
 

@@ -1,30 +1,60 @@
 ---
-title: "About R"
+title: "About R dplyr Package"
 ---
 
-R dplyr Package
+<h1>There are 5 main verbs:</h1>
 
-There are 5 main verbs:
-
-1. select(): takes a subset of the coulmns
-
-2. filter(): takes a subset of the rows
-
-3. mutate(): add or modify existing columns
-
-4. arrange(): sort the rows
-
-5. summarise(): aggregate the data across the rows
+<h1>1. select(): takes a subset of the coulmns</h1>
+```{r, message=F, warning=F}
+library("dplyr")
+data("iris")
+iris%>%
+  select(Species,Sepal.Length)%>%
+  head()
+```
 
 
-Combine multiple tables:
+<h1>2. filter(): takes a subset of the rows</h1>
+```{r}
+iris%>%
+  filter(Species=='setosa')%>%
+  head()
+```
 
-inner_join():return all rows from x where there are matching values in y, and all columns from x and y.
 
-left_join(): return all rows from x, and all columns from x and y.
+<h1>3. mutate(): add or modify existing columns</h1>
+```{r}
+iris%>%
+  mutate(Petal.Ratio=Petal.Length/Petal.Width)%>%
+  head()
+```
 
-right_join():return all rows from y , and all columns from x and y. 
+<h1>4. arrange(): sort the rows</h1>
 
-full_join(): return all rows and all columns from both x and y. 
+```{r}
+iris%>%
+  arrange(desc(Sepal.Length))%>%
+  head()
+```
+
+
+<h1>5. summarise(): aggregate the data across the rows</h1>
+```{r}
+iris%>%summarise(mean.length = mean(Petal.Length, na.rm = TRUE))
+```
+
+
+<h1>Below are ways to combine multiple tables:</h1>
+
+<p>1.inner_join():return all rows from x where there are matching values in y, and all columns from x and y.</p>
+
+<p>2.left_join(): return all rows from x, and all columns from x and y.</p>
+
+<p>3.right_join():return all rows from y , and all columns from x and y. </p>
+
+<p>4.full_join(): return all rows and all columns from both x and y.</p> 
 
 <img src="Image/dplyr-joins.png" style="width:50%; border:1px solid; margin-right: 20px" align="right">
+
+
+
