@@ -1,0 +1,79 @@
+---
+title: "Graphics with ggplot2"
+---
+
+
+The ggplot2 package was created by Hadley Wickham. It can be uased to draw complex plots with R.
+
+<h1>Why ggplot2?</h1>
+
+Here are some advantages of using ggplot2:
+
+1. Consistent underlying grammar of graphics 
+
+2. Plot specification at a high level of abstraction
+
+3. Flexibility
+
+4. Theme system for polishing plot appearance
+
+Some things you cannot do with ggplot2:
+
+1. 3-dimensional graphics
+
+2. Interactive graphics
+
+
+<h2>Scatterplot</h2>
+
+```{r,message=F, warning=F}
+library(mosaic) 
+library(ggplot2) 
+```
+
+```{r}
+g<-ggplot(data=RailTrail,aes(x=volume,y=hightemp))+ # specify x and y data
+  
+geom_point(aes(color = precip), size = 3)+ #fill points according to amount of a variable and adjust point size
+
+guides(color=guide_legend(title="Amount of precipitation"))+ # title of the legend
+  
+ggtitle('Scatterplot ') + # title of the plot 
+  
+theme(axis.text=element_text(size=16), #themes of x and y axis
+axis.title=element_text(size=20),
+plot.title=element_text(size = 24)) +
+  
+ylab('High temperature')+xlab('Number of crossings per day')  #title of x and y axis
+
+
+g
+```
+
+<h2>Bar Graphs</h2>
+```{r}
+
+p <- ggplot(data = Marriage, aes(x = race))+ #specify data 
+  
+geom_bar(aes(fill = prevconc), position = 'fill') + # fill each bar according to amount of another variable "prevconc"
+
+  guides (fill = guide_legend(title = "The way last marriage ended"))+  # title of the legend
+  ggtitle('Barplot of % difference in each race') + 
+
+  theme(axis.text=element_text(size=14),# text sizes of aixs titles
+  axis.title=element_text(size=20),
+  plot.title=element_text(size = 22)) +
+
+  ylab('Percent')+xlab('Race')+ # aixs titles
+  
+  coord_flip()  #flip the graph to horizontal bar graph
+     
+
+p
+```
+
+
+
+
+Reference
+[Reference 1](https://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html).

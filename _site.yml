@@ -13,8 +13,11 @@ navbar:
       href: mailto:<shelleyzhang11@gmail.com>
 
   left:
-    - text: "About R"
+    - text: "About R dplyr"
       href: about.html
+    - text: "About R ggplot2"
+      href: ggplot2.html
+      
 
   
 output:

@@ -12,7 +12,7 @@
 
 
 
-<title>Personal Website</title>
+<title>Graphics with ggplot2</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -314,18 +314,71 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Personal Website</h1>
+<h1 class="title toc-ignore">Graphics with ggplot2</h1>
 
 </div>
 
 
-<div id="section" class="section level3">
-<h3></h3>
-<p><img src="Image/cat.jpg" style="width:50%; border:1px solid; margin-right: 20px" align="left"> Hi, I’m Xueting Zhang, currently a Health Informatics graduate student at Cornell University. I received my Bachelor degree in Biology at UC San Diego.</p>
-<p>Previously, I’ve workes as an e-commerce strategy intern at LVMH P&amp;C, helping the group making digital tranformation strategies and communicating with top consulting companies to achieve the goal.</p>
-<p>At Scripps Research Institute, I participated in Dr. Makarenkova’s molecular biology research project, studying molecular mechanisms of lacrimal gland development and regeneration with a goal to develop new therapies to restore lacrimal gland function.</p>
-<p>My resume is available <a href="Files/Resume-Xueting.pdf">here</a>.</p>
-</div>
+<p>The ggplot2 package was created by Hadley Wickham. It can be uased to draw complex plots with R.</p>
+<h1>
+Why ggplot2?
+</h1>
+<p>Here are some advantages of using ggplot2:</p>
+<ol style="list-style-type: decimal">
+<li><p>Consistent underlying grammar of graphics</p></li>
+<li><p>Plot specification at a high level of abstraction</p></li>
+<li><p>Flexibility</p></li>
+<li><p>Theme system for polishing plot appearance</p></li>
+</ol>
+<p>Some things you cannot do with ggplot2:</p>
+<ol style="list-style-type: decimal">
+<li><p>3-dimensional graphics</p></li>
+<li><p>Interactive graphics</p></li>
+</ol>
+<h2>
+Scatterplot
+</h2>
+<pre class="r"><code>library(mosaic) 
+library(ggplot2) </code></pre>
+<pre class="r"><code>g&lt;-ggplot(data=RailTrail,aes(x=volume,y=hightemp))+ # specify x and y data
+  
+geom_point(aes(color = precip), size = 3)+ #fill points according to amount of a variable and adjust point size
+
+guides(color=guide_legend(title=&quot;Amount of precipitation&quot;))+ # title of the legend
+  
+ggtitle(&#39;Scatterplot &#39;) + # title of the plot 
+  
+theme(axis.text=element_text(size=16), #themes of x and y axis
+axis.title=element_text(size=20),
+plot.title=element_text(size = 24)) +
+  
+ylab(&#39;High temperature&#39;)+xlab(&#39;Number of crossings per day&#39;)  #title of x and y axis
+
+
+g</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<h2>
+Bar Graphs
+</h2>
+<pre class="r"><code>p &lt;- ggplot(data = Marriage, aes(x = race))+ #specify data 
+  
+geom_bar(aes(fill = prevconc), position = &#39;fill&#39;) + # fill each bar according to amount of another variable &quot;prevconc&quot;
+
+  guides (fill = guide_legend(title = &quot;The way last marriage ended&quot;))+  # title of the legend
+  ggtitle(&#39;Barplot of % difference in each race&#39;) + 
+
+  theme(axis.text=element_text(size=14),# text sizes of aixs titles
+  axis.title=element_text(size=20),
+  plot.title=element_text(size = 22)) +
+
+  ylab(&#39;Percent&#39;)+xlab(&#39;Race&#39;)+ # aixs titles
+  
+  coord_flip()  #flip the graph to horizontal bar graph
+     
+
+p</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Reference <a href="https://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html">Reference 1</a>.</p>
 
 
 
